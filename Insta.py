@@ -9,14 +9,19 @@ from selenium.webdriver.common.by import By
 from time import sleep
 import random
 import json
-
+# 12s + 5 = 17 
+# 17 * int(ROWS)
 with open('config.json') as json_data_file:
     config = json.load(json_data_file)
 
 
 
 def Insta(username, password, url):
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument('--no-sandbox')
+
+    driver = webdriver.Chrome(chrome_options=options)
+
     driver.get("https://www.instagram.com/accounts/login/")
 
     timeout = 10
@@ -53,9 +58,9 @@ def Insta(username, password, url):
             WebDriverWait(driver, timeout).until(element_present)
         except TimeoutException:
             print "Timed out waiting for page to load"
-	print '1'	
 	sleep(12)
 
+	print (x+1)	
         driver.find_element_by_xpath("//textarea[contains(@aria-label,'Add a comment')]").click()
 
         driver.find_element_by_xpath("//textarea[contains(@aria-label,'Add a comment')]").send_keys(
