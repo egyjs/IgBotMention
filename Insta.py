@@ -8,6 +8,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from time import sleep
 import random
+import json
+
+with open('config.json') as json_data_file:
+    config = json.load(json_data_file)
+
 
 
 def Insta(username, password, url):
@@ -31,8 +36,8 @@ def Insta(username, password, url):
     sleep(5)
     driver.get(url)
 
-    MENTION = 3  # how many users mention per rows
-    ROWS = 5  # how many rows comments
+    MENTION = config['MENTION']  # how many users mention per rows
+    ROWS = config['ROWS']  # how many rows comments
 
     mentions = open("lists/600-list-angham.txt").readlines()
     for x in range(ROWS):
@@ -62,16 +67,13 @@ def Insta(username, password, url):
     sleep(10)
 
 
-auths = open('auth.txt', 'r')
-for auth in auths:
-    if auth and auth.strip():
-        auth = auth.split('\t')
-        username = auth[0].strip()
-        password = auth[1].strip()
-        print username, password
+for auth in config['auth']:
+    username = auth['user']
+    password = auth['pass']
+    print username, password
 
-        urls = open('urls.txt', 'r')
-        for url in urls:
-            if url and url.strip():
-                print url
-                Insta(username, password, url.strip())
+    
+    for url in config['urls']:
+        if url and url.strip():
+            print url
+            Insta(username, password, url.strip())

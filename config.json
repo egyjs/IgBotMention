@@ -1,0 +1,14 @@
+{
+  "MENTION":1,
+  "ROWS":1,
+  "auth": [
+    {
+      "user": "egy.js",
+      "pass": "abu123123123"
+    }
+  ],
+  "urls": [
+    "https://www.instagram.com/p/BvYUmgiJVGJ/",
+	"https://www.instagram.com/p/BtRkeiHBg11/"
+    ]
+}
