@@ -34,7 +34,7 @@ def Insta(username, password, url):
     MENTION = 3  # how many users mention per rows
     ROWS = 5  # how many rows comments
 
-    mentions = open("mentions.txt").readlines()
+    mentions = open("lists/600-list-angham.txt").readlines()
     for x in range(ROWS):
         text = ''
         for y in range(MENTION):
