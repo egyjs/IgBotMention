@@ -3,12 +3,12 @@
   "ROWS":10,
   "auth": [
     {
-      "user": "username",
-      "pass": "password"
+      "user": "egy.js",
+      "pass": "abu123123123"
     }
   ],
   "urls": [
-    "https://www.instagram.com/p/BvYUmgiJVGJ/",
+    "https://www.instagram.com/p/BXi6ZLygP5M/",
 	"https://www.instagram.com/p/BtRkeiHBg11/"
     ]
 }

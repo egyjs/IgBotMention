@@ -19,7 +19,7 @@ with open('config.json') as json_data_file:
 def Insta(username, password, url):
     options = webdriver.ChromeOptions()
     options.add_argument('--no-sandbox')
-    #options.add_argument("--headless");
+    options.add_argument("--headless");
 
 
 
