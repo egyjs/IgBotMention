@@ -1,4 +1,6 @@
 ## This bot helps us to send automatic mentions below a post that a comment.
+
+    cp config.json.example config.json  
 in `config.json`:
 You can set row comments and mention per rows.
 
